@@ -1,0 +1,59 @@
+#app {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+body {
+    background-color: rgb(28, 25, 55);
+}
+
+#main {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#header {
+    display: flex;
+    justify-content: center;
+
+}
+
+h2 {
+    font-size: 45pt;
+    color: white;
+    font-family: 'Dosis', sans-serif;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    border-collapse: collapse;
+    width: 400px;
+    font-family: 'Dosis', sans-serif;
+    color: black;
+    background-color: white;
+}
+
+table,
+th,
+td {
+    border: 1px solid #222222;
+}
+
+th,
+td {
+    padding: 15px;
+}
+
+button {
+    background-color: white;
+    text-decoration: none;
+    border-style: none;
+    font-family: 'Dosis', sans-serif;
+}
