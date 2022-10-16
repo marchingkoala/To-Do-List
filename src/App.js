@@ -1,5 +1,6 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import SingleTodo from './SingleTodo';
+import Filter from './Filter';
 
 const dailyTask = [
   { id: 1, thingsToDo: "Walk Targle" },
@@ -10,6 +11,9 @@ const dailyTask = [
 const App = () => {
 
     const [ toDo, settoDo ] = useState(dailyTask);
+    const [status, setStatus] = useState('All')
+    const [filtered, setfiltered] = useState([]);
+
 
     return (
       <div id="main">
@@ -19,30 +23,32 @@ const App = () => {
         <div id="container">
           <div>
             <table id="taskTable">
-              <tbody class="tableBody">
+              <tbody className="tableBody">
                 <tr>
                   <th>Daily tasks to be completed</th>
                 </tr>
-                {toDo.map((item) => {
+                {filtered.map((item) => {
                   return (
-                    <tr class="eachTask">
-                      <td>
-                        <SingleTodo toDoName = {item.thingsToDo}/>
-                      </td>
+                    <tr className="eachTask" key={item.id}>
+                      <SingleTodo
+                        toDoName={item}
+                      />
                     </tr>
                   );
                 })}
                 <tr>
-                  <th>
-                    <button id="all">All</button>{" "}
-                    <button id="active">Active</button>{" "}
-                    <button id="completed">Completed</button>
-                  </th>
+                  <Filter
+                    toDoName={toDo.map((item) => {
+                      return item;
+                    })}
+                    toDo={toDo}
+                    setfiltered={setfiltered}
+                    filtered = {filtered}
+                  />
                 </tr>
               </tbody>
             </table>
           </div>
-
         </div>
       </div>
     );

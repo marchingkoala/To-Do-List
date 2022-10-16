@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: rgb(28, 25, 55);
+    background-color: rgb(43, 39, 88);
 }
 
 #main {
@@ -38,6 +38,7 @@ table {
     font-family: 'Dosis', sans-serif;
     color: black;
     background-color: white;
+    box-shadow: 10px 10px 20px rgb(20, 20, 46);
 }
 
 table,
@@ -49,6 +50,10 @@ td {
 th,
 td {
     padding: 15px;
+}
+
+.boxAndTask {
+    display: flex;
 }
 
 button {
